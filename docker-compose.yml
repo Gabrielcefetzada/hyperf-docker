@@ -5,41 +5,40 @@ version: "3.7"
 services:
   # base image
   alpine-base:
-    image: "hyperf/hyperf:${PHP_VERSION}-alpine-v${ALPINE_VERSION}-base"
+    image: "hyperf/hyperf:8.1-alpine-v3.18-base"
     build:
-      context: "${PHP_VERSION}/alpine/base"
+      context: "8.1/alpine/base"
       args:
-        ALPINE_VERSION: ${ALPINE_VERSION}
+        ALPINE_VERSION: "3.18"
 
   # swoole image
   alpine-swoole:
-    image: "hyperf/hyperf:${PHP_VERSION}-alpine-v${ALPINE_VERSION}-swoole${SPEC}-${SW_VERSION}"
+    image: "hyperf/hyperf:8.1-alpine-v3.18-swoole"
     build:
-      context: "${PHP_VERSION}/alpine/swoole"
-      dockerfile: "Dockerfile${SPEC}"
+      context: "8.1/alpine/swoole"
       args:
-        ALPINE_VERSION: ${ALPINE_VERSION}
-        SW_VERSION: ${SW_VERSION}
-        COMPOSER_VERSION: ${COMPOSER_VERSION}
-        PHP_BUILD_VERSION: ${PHP_BUILD_VERSION}
+        ALPINE_VERSION: "3.18"
+        SW_VERSION: "swoole"
+        COMPOSER_VERSION: "COMPOSER_VERSION_VALUE"
+        PHP_BUILD_VERSION: "PHP_BUILD_VERSION_VALUE"
 
   # swow image
   alpine-swow:
-    image: "hyperf/hyperf:${PHP_VERSION}-alpine-v${ALPINE_VERSION}-swow${SPEC}-${SW_VERSION}"
+    image: "hyperf/hyperf:8.1-alpine-v3.18-swow"
     build:
-      context: "${PHP_VERSION}/alpine/swow"
+      context: "8.1/alpine/swow"
       args:
-        ALPINE_VERSION: ${ALPINE_VERSION}
-        SW_VERSION: ${SW_VERSION}
-        COMPOSER_VERSION: ${COMPOSER_VERSION}
-        PHP_BUILD_VERSION: ${PHP_BUILD_VERSION}
+        ALPINE_VERSION: "3.18"
+        SW_VERSION: "swow"
+        COMPOSER_VERSION: "COMPOSER_VERSION_VALUE"
+        PHP_BUILD_VERSION: "PHP_BUILD_VERSION_VALUE"
 
   # dev image
   alpine-dev:
-    image: "hyperf/hyperf:${PHP_VERSION}-alpine-v${ALPINE_VERSION}-dev"
+    image: "hyperf/hyperf:8.1-alpine-v3.18-dev"
     build:
-      context: "${PHP_VERSION}/alpine/dev"
+      context: "8.1/alpine/dev"
       args:
-        ALPINE_VERSION: ${ALPINE_VERSION}
-        COMPOSER_VERSION: ${COMPOSER_VERSION}
-        PHP_BUILD_VERSION: ${PHP_BUILD_VERSION}
+        ALPINE_VERSION: "3.18"
+        COMPOSER_VERSION: "COMPOSER_VERSION_VALUE"
+        PHP_BUILD_VERSION: "PHP_BUILD_VERSION_VALUE"
